@@ -15,8 +15,16 @@ const SearchResultVideo = ({video}) => {
           )}
         </div>
         <div className="flex flex-col ml-4 md:ml-6 mt-4 md:mt-0 overflow-hidden">
-          <span className='text-lg md:text-2xl font-semibold line-clamp-2 text-white'></span>
+          <div className='flex flex-row gap-2 items-center'>
+          <div className='flex md:hidden h-9 w-16 rounded-full overflow-hidden'>
+                <img className='h-full w-full object-cover' src={video?.author?.avatar[0]?.url} alt="" />
+              </div>
+              <div>
+              <span className='text-lg md:text-2xl font-semibold line-clamp-2 text-white'>{video?.title}</span>
           <span className='empty:hidden text-sm line-clamp-1 md:line-clamp-2 text-white/[0.7] md:pr-24 md:my-4'>{video?.descriptionSnippet}</span>
+              </div>
+          </div>
+        
           <div className='hidden md:flex items-center'>
             <div className='flex items-start mr-3'>
               <div className='flex h-9 w-9 rounded-full overflow-hidden'>
